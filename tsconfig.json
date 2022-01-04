@@ -13,14 +13,13 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "outDir": "./dist",
     "watch": true,
-    "declaration": true
+    "declaration": true,
+    "sourceMap": true
   },
   "include": ["./src"],
   "exclude": ["node_modules"]

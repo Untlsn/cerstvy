@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "tsc",
+    "watch:common": "tsc --module CommonJS --outDir ./dist/common",
+    "watch:es": "tsc --module ESNext --outDir ./dist",
     "test": "jest"
   },
   "devDependencies": {

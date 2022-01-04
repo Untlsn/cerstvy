@@ -1,0 +1,23 @@
+functions not included from lodash
+* differenceWith
+* intersectionWith
+* pullAllBy
+* pullAllWith
+* pullAt
+* sortedIndex
+* sortedIndexBy
+* sortedIndexOf
+* sortedLastIndex
+* sortedLastIndexBy
+* sortedLastIndexOf
+* sortedUniq
+* sortedUniqBy
+* takeRightWhile
+* takeWhile
+* unionWith
+* uniqWith
+* xor
+* xorBy
+* xorWith
+* zipObjectDeep
+* zipWith
