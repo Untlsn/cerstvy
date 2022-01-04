@@ -1,7 +1,11 @@
 import * as _ from './index';
 
-const a= _.zipObject(['a', 'b'], [1, 2]);
+const a = _.countBy([6.1, 4.2, 6.3], Math.floor);
+// => { '4': 1, '6': 2 }
 
-console.log(a);
+// The `_.property` iteratee shorthand.
+const b = _.countBy(['one', 'two', 'three'], (e) => _.property(e, 'length'));
+// => { '3': 2, '5': 1 }
 
 
+console.log(a, b);

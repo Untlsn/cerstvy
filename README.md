@@ -21,3 +21,32 @@ functions not included from lodash
 * xorWith
 * zipObjectDeep
 * zipWith
+
+* countBy
+* each -> forEach
+* eachRight -> forEachRight
+* every
+* filter
+* find
+* findLast
+* flatMap
+* flatMapDeep
+* flatMapDepth
+* forEach
+* forEachRight
+* groupBy
+* includes
+* invokeMap
+* keyBy
+* map
+* orderBy
+* partition
+* reduce
+* reduceRight
+* reject
+* sample
+* sampleSize
+* shuffle
+* size
+* some
+* sortBy

@@ -39,4 +39,7 @@ export { default as unzipWith } from './main/unzipWith';
 export { default as zip } from './main/zip';
 export { default as zipObject } from './main/zipObject';
 export { default as zipWith } from './main/zipWith';
+export { default as countBy } from './main/countBy';
+export { default as property } from './main/property';
+export { default as deepProperty } from './main/deepProperty';
 
