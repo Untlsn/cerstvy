@@ -42,4 +42,6 @@ export { default as zipWith } from './main/zipWith';
 export { default as countBy } from './main/countBy';
 export { default as property } from './main/property';
 export { default as deepProperty } from './main/deepProperty';
+export { default as curry } from './main/curry';
+export { default as curryRight } from './main/curryRight';
 

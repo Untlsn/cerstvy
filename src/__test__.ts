@@ -1,11 +1,14 @@
 import * as _ from './index';
+import * as lo from 'lodash';
 
-const a = _.countBy([6.1, 4.2, 6.3], Math.floor);
-// => { '4': 1, '6': 2 }
+const a = _.curry(
+  (a: string, b: string, c: string, d: string) => a+b+c+d
+)
 
-// The `_.property` iteratee shorthand.
-const b = _.countBy(['one', 'two', 'three'], (e) => _.property(e, 'length'));
-// => { '3': 2, '5': 1 }
+const b = _.curryRight(
+  (a: string, b: string, c: string, d: string) => a+b+c+d
+)
 
+console.log(a('a', 'b', 'c', 'd'));
+console.log(b('a', 'b', 'c', 'd'));
 
-console.log(a, b);
