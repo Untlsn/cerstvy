@@ -1,5 +1,6 @@
 import chain, { Chain } from './chain';
 import revFn from './revFn';
+import __ from './__';
 
 export class ChainWait<T = any, R = any> {
   constructor(private callbacks: [fn: Function, args: any][] = []) {}
@@ -27,6 +28,16 @@ export class ChainWait<T = any, R = any> {
    */
   mapRev<NewR, Args extends any[] = any[]>(callback: (...args: [...Args, T]) => NewR, ...args: Args) {
     return new ChainWait<T, NewR>([...this.callbacks, [revFn(callback), args]])
+  }
+
+  /**
+   * Work like map but T will be put in on placeholder
+   * @param callback function use to map value
+   * @param args if the callback can have more than one argument, a res can be put here
+   */
+  mapClever<NewR>(callback: (...args: any[]) => NewR, ...args: any[]) {
+    const nestCallback = (val: any) => callback(...args.map(v => v == __ ? val : v))
+    return new ChainWait<T, NewR>([...this.callbacks, [nestCallback, []]])
   }
 
   /**
