@@ -1,3 +1,3 @@
-const identify = <T>(val: T) => val;
+const identify = <T>(self: T) => self;
 
 export default identify;
