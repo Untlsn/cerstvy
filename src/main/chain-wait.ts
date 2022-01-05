@@ -1,7 +1,8 @@
 import chain, { Chain } from './chain';
+import revFn from './revFn';
 
 export class ChainWait<T = any, R = any> {
-  private callbacks: [fn: Function, args: any][] = []
+  constructor(private callbacks: [fn: Function, args: any][] = []) {}
 
   /**
    * return standalone map function of ChainWait
@@ -15,9 +16,17 @@ export class ChainWait<T = any, R = any> {
    * @param callback function use to map value
    * @param args if the callback can have more than one argument, a res can be put here
    */
-  map<NewR, Args extends any[] = any[]>(callback: (val: T, ...restArgs: Args) => NewR, ...args: Args) {
-    this.callbacks.push([callback, args]);
-    return this as any as ChainWait<T, NewR>
+  map<NewR, Args extends any[] = any[]>(callback: (...args: [T, ...Args]) => NewR, ...args: Args) {
+    return new ChainWait<T, NewR>([...this.callbacks, [callback, args]])
+  }
+
+  /**
+   * Work like map but put T ad end of args
+   * @param callback function use to map value
+   * @param args if the callback can have more than one argument, a res can be put here
+   */
+  mapRev<NewR, Args extends any[] = any[]>(callback: (...args: [...Args, T]) => NewR, ...args: Args) {
+    return new ChainWait<T, NewR>([...this.callbacks, [revFn(callback), args]])
   }
 
   /**

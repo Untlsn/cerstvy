@@ -1,7 +1,7 @@
 import * as Y from './index'
 
-const chain7 = Y.chainWait<number>()
-  .map((v) => v + 2)
-  .toChain(5)
+const join3 = (a: string, b: string, c: string) => `${a} ${b} ${c}`;
 
-chain7.map(console.log)
+Y.chain('kota')
+  .mapClever(join3, Y.__, Y.__, Y.__)
+  .map(console.log)
