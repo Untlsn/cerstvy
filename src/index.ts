@@ -52,6 +52,25 @@ export { default as deepProperty } from './main/deepProperty';
 export { default as curry } from './main/curry';
 export { default as curryRight } from './main/curryRight';
 export { default as __ } from './main/__';
+export { default as every } from './main/every';
+export { default as filter } from './main/filter';
+export { default as find } from './main/find';
+export { default as findLast } from './main/findLast';
+export { default as flatMap } from './main/flatMap';
+export { default as fold } from './main/fold';
+export { default as forEach } from './main/forEach';
+export { default as forEachRight } from './main/forEachRight';
+export { default as groupBy } from './main/groupBy';
+export { default as includes, fromIndex as includesFromIndex } from './main/includes';
+export { default as keyBy } from './main/keyBy';
+export { default as partition } from './main/partition';
+export { default as reduce } from './main/reduce';
+export { default as reject } from './main/reject';
+export { default as sample } from './main/sample';
+export { default as sampleSize } from './main/sampleSize';
+export { default as size } from './main/size';
+export { default as some } from './main/some';
+export { default as toggleRes } from './main/toggleRes';
 
 
 
