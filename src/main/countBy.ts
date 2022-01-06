@@ -1,11 +1,15 @@
-const countBy = <T, R extends string|number>(arr: T[], by: (val: T) => R) => {
+import ArrayCallback from '../types/ArrayCallback';
+
+const countBy = <T, R extends string|number>(arr: T[], by: ArrayCallback<T, R>) => {
   const res: Record<any, number> = {};
 
-  arr.forEach(el => {
-    if (!res[by(el)]) {
-      res[by(el)] = 1;
+  arr.forEach((el, i) => {
+    const byRes = by(el, i, arr)
+
+    if (!res[byRes]) {
+      res[byRes] = 1;
     } else {
-      res[by(el)]++
+      res[byRes]++
     }
   })
 
